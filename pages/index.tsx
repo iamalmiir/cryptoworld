@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import Navbar from '@components/navbar/Navbar'
 
 const Home: NextPage = () => {
@@ -53,8 +54,9 @@ const Home: NextPage = () => {
               </div>
               <div className='mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative'>
                 <div className='mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0'>
-                  {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-                  <img
+                  <Image
+                    width={600}
+                    height={600}
                     className='w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none'
                     src='https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg'
                     alt=''
