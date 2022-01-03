@@ -7,8 +7,8 @@ import { MobilePart, NavMenuItem, TransitionFunc } from './index'
 import { Logo } from '@components/index'
 
 // Icons
-import { MenuIcon } from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { HiMenuAlt4 } from 'react-icons/hi'
+import { BiChevronDown } from 'react-icons/bi'
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -27,7 +27,7 @@ const Navbar: NextPage = () => {
         <div className='-mr-2 -my-2 md:hidden'>
           <Popover.Button className='rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100'>
             <span className='sr-only'>Open menu</span>
-            <MenuIcon className='h-6 w-6' aria-hidden='true' />
+            <HiMenuAlt4 className='h-6 w-6' aria-hidden='true' />
           </Popover.Button>
         </div>
         <div className='hidden md:flex-1 md:flex md:items-center md:justify-center'>
@@ -42,7 +42,7 @@ const Navbar: NextPage = () => {
                     )}
                   >
                     <span>Menu</span>
-                    <ChevronDownIcon
+                    <BiChevronDown
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
                         'ml-2 h-5 w-5 group-hover:text-gray-500'
