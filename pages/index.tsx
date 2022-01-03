@@ -15,12 +15,12 @@ const Home: NextPage = () => {
                   <h1 className='mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl'>
                     <span className='block'>An easy way to</span>
                     <span className='pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-midnight_light to-cyan-400 sm:pb-5'>
-                      understand Algo
+                      track your crypto assets
                     </span>
                   </h1>
                   <p className='text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl'>
-                    A world where everyone creates and exchanges value
-                    efficiently, transparently, and securely.
+                    Track your crypto assets in one place and get notified when
+                    they reach your desired value.
                   </p>
                   <div className='mt-10 sm:mt-12'>
                     <form className='sm:max-w-xl sm:mx-auto lg:mx-0'>
@@ -39,13 +39,17 @@ const Home: NextPage = () => {
                         <div className='mt-3 sm:mt-0 sm:ml-3'>
                           <button
                             type='submit'
-                            className='block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-midnight_light to-cyan-600 text-white font-medium hover:from-cyan-600 hover:to-midnight_light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900'
+                            className='block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-midnight_light to-accent-600 text-white font-medium hover:from-cyan-600 hover:to-midnight_light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900'
                           >
                             Stay up to date
                           </button>
                         </div>
                       </div>
                       <p className='mt-3 text-sm text-gray-300 sm:mt-4'>
+                        Subscribe to our newsletter to get the latest news and
+                        updates.
+                      </p>
+                      <p className='text-xs text-gray-500 mt-3 sm:mt-4'>
                         {"We'll never share your email with anyone else."}
                       </p>
                     </form>
@@ -58,7 +62,7 @@ const Home: NextPage = () => {
                     width={600}
                     height={600}
                     className='w-full animate-fade-in-down lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none'
-                    src='https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg'
+                    src='https://res.cloudinary.com/iamalmiir/image/upload/v1641196755/Crypto_portfolio-amico_2_j4ounr.svg'
                     alt=''
                   />
                 </div>

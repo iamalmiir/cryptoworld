@@ -6,7 +6,8 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
         midnight: '#011526',
-        midnight_light: '#032340',
+        midnight_light: '#142841',
+        'accent-600': '#0891B2',
       },
       keyframes: {
         'fade-in-down': {
