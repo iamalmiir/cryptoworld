@@ -18,7 +18,7 @@ const Home: NextPage = () => {
                       understand Algo
                     </span>
                   </h1>
-                  <p className='text-base text-gray-500 sm:text-xl lg:text-lg xl:text-xl'>
+                  <p className='text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl'>
                     A world where everyone creates and exchanges value
                     efficiently, transparently, and securely.
                   </p>
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
                             id='email'
                             type='email'
                             placeholder='Enter your email'
-                            className='block bg-midnight_light w-full px-4 py-3 rounded-md border-0 text-base text-white placeholder-gray-400 focus:outline-none'
+                            className='block bg-midnight_light w-full px-4 py-3 rounded-md border-0 text-base text-white placeholder-gray-300 focus:outline-none'
                           />
                         </div>
                         <div className='mt-3 sm:mt-0 sm:ml-3'>
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
                   <Image
                     width={600}
                     height={600}
-                    className='w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none'
+                    className='w-full animate-fade-in-down lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none'
                     src='https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg'
                     alt=''
                   />
