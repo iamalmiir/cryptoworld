@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import { solutions } from '@lib/navbar.options'
 
 // UI Components
@@ -32,18 +33,16 @@ const MobilePart: NextPage = () => {
             <div className='mt-6'>
               <nav className='grid gap-6'>
                 {solutions.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className='-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50'
-                  >
-                    <div className='flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-midnight_light text-white'>
-                      <item.icon className='h-6 w-6' aria-hidden='true' />
-                    </div>
-                    <div className='ml-4 text-base font-medium text-gray-900'>
-                      {item.name}
-                    </div>
-                  </a>
+                  <Link href={item.href} key={item.href}>
+                    <a className='-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50'>
+                      <div className='flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-midnight_light text-white'>
+                        <item.icon className='h-6 w-6' aria-hidden='true' />
+                      </div>
+                      <div className='ml-4 text-base font-medium text-gray-900'>
+                        {item.name}
+                      </div>
+                    </a>
+                  </Link>
                 ))}
               </nav>
             </div>
