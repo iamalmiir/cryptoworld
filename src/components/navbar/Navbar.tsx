@@ -16,7 +16,7 @@ function classNames(...classes: string[]) {
 
 const Navbar: NextPage = () => {
   return (
-    <Popover className='relative bg-white'>
+    <Popover className='relative'>
       <div className='flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10'>
         <div>
           <a href='#' className='flex'>
