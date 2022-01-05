@@ -16,7 +16,7 @@ function classNames(...classes: string[]) {
 
 const Navbar: NextPage = () => {
   return (
-    <Popover className='relative'>
+    <Popover className='relative bg-midnight'>
       <div className='flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10'>
         <div>
           <a href='#' className='flex'>
@@ -37,8 +37,8 @@ const Navbar: NextPage = () => {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open ? 'text-gray-900' : 'text-gray-500 ',
-                      'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 '
+                      open ? 'text-cyan-400' : 'text-white ',
+                      'group rounded-md inline-flex items-center text-base font-medium hover:text-cyan-400 '
                     )}
                   >
                     <span>Menu</span>

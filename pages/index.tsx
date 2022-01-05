@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Navbar />
-      <main>
+      <main className='bg-midnight'>
         <div className='pt-10  sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden'>
           <div className='mx-auto max-w-7xl lg:px-8'>
             <div className='lg:grid lg:grid-cols-2 lg:gap-8'>
