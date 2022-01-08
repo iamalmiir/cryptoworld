@@ -1,4 +1,4 @@
-import { NavMenuItemProps } from '../../types/navbar.types'
+import { NavMenuItemProps } from '../../ts/navbar'
 import Link from 'next/link'
 
 type NavMenuProps = {
