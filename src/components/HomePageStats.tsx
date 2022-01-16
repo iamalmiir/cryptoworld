@@ -8,26 +8,26 @@ const classNames = (...classes: any) => {
 
 const HomePageStats = () => {
   return (
-    <div className='relative bg-gray-50 pt-16 sm:pt-24 lg:pt-32 pb-12'>
+    <div className='relative bg-gradient-to-b from-midnight to-midnight_light pt-16 sm:pt-24 lg:pt-32 pb-12'>
       <div className='mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl'>
         <div>
           <h2 className='text-base font-semibold tracking-wider text-cyan-600 uppercase'>
             Top Movers
           </h2>
-          <p className='mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl'>
+          <p className='mt-2 text-3xl font-extrabold text-gray-200 tracking-tight sm:text-4xl'>
             Explore most popular crypto currency
           </p>
-          <p className='mt-5 max-w-prose mx-auto text-xl text-gray-500'>
+          <p className='mt-5 max-w-prose mx-auto text-xl text-gray-400'>
             Phasellus lorem quam molestie id quisque diam aenean nulla in.
             Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
             condimentum id viverra nulla.
           </p>
         </div>
-        <dl className='mt-5 grid grid-cols-1 rounded-lg bg-white overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x'>
+        <dl className='mt-5 grid grid-cols-1 rounded-lg bg-midnight_light overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x'>
           {stats.map((crypto) => (
             <div key={crypto.name} className='px-4 py-5 sm:p-6'>
-              <dt className='text-base font-normal text-gray-900'>
-                {crypto.name}
+              <dt className='text-base text-left font-bold text-gray-200'>
+                {crypto.name} USD
               </dt>
               <dd className='mt-1 flex justify-between items-baseline md:block lg:flex'>
                 <div className='flex items-baseline text-2xl font-semibold text-cyan-600'>

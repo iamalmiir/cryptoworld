@@ -14,7 +14,7 @@ const Home: NextPage = () => {
                 <div className='lg:py-24'>
                   <h1 className='mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl'>
                     <span className='block'>An easy way to</span>
-                    <span className='pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-midnight_light to-cyan-400 sm:pb-5'>
+                    <span className='pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-accent-500 to-accent-900 sm:pb-5'>
                       track your crypto assets
                     </span>
                   </h1>

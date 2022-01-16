@@ -7,7 +7,9 @@ module.exports = {
         current: 'currentColor',
         midnight: '#011526',
         midnight_light: '#142841',
+        'accent-500': '#06b6d4',
         'accent-600': '#0891B2',
+        'accent-900': '#164e63',
       },
       keyframes: {
         'fade-in-down': {
