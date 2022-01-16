@@ -23,14 +23,14 @@ const HomePageStats = () => {
             condimentum id viverra nulla.
           </p>
         </div>
-        <dl className='mt-5 grid grid-cols-1 rounded-lg bg-midnight_light overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x'>
+        <dl className='mt-5 grid grid-cols-1 rounded-lg bg-midnight overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x'>
           {stats.map((crypto) => (
             <div key={crypto.name} className='px-4 py-5 sm:p-6'>
               <dt className='text-base text-left font-bold text-gray-200'>
                 {crypto.name} USD
               </dt>
               <dd className='mt-1 flex justify-between items-baseline md:block lg:flex'>
-                <div className='flex items-baseline text-2xl font-semibold text-cyan-600'>
+                <div className='flex items-baseline text-2xl font-semibold text-cyan-300'>
                   {crypto.stat}
                 </div>
 
