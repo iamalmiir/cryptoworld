@@ -62,7 +62,7 @@ const Home: NextPage = () => {
                     width={600}
                     height={600}
                     className='w-full animate-fade-in-down lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none'
-                    src='https://res.cloudinary.com/iamalmiir/image/upload/v1641196755/Crypto_portfolio-amico_2_j4ounr.svg'
+                    src='https://res.cloudinary.com/iamalmiir/image/upload/v1642357532/Crypto_portfolio-amico_2_pnqezv.svg'
                     alt=''
                   />
                 </div>
