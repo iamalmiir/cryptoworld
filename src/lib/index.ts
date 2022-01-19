@@ -1,6 +1,6 @@
 export const stats = [
   {
-    name: 'ALGO',
+    name: 'ALGOOOOO',
     stat: '2.83',
     todayChange: '32%',
     ytd: '324%',

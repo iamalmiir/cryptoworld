@@ -20,9 +20,7 @@ const MobilePart: NextPage = () => {
         <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50'>
           <div className='pt-5 pb-6 px-5'>
             <div className='flex items-center justify-between'>
-              <div>
-                <Logo />
-              </div>
+              <Logo />
               <div className='-mr-2'>
                 <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100'>
                   <span className='sr-only'>Close menu</span>

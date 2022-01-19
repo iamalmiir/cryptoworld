@@ -18,12 +18,8 @@ const Navbar: NextPage = () => {
   return (
     <Popover className='relative bg-midnight'>
       <div className='flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10'>
-        <div>
-          <a href='#' className='flex'>
-            <span className='sr-only'>Algorand</span>
-            <Logo />
-          </a>
-        </div>
+        <span className='sr-only'>Algorand</span>
+        <Logo />
         <div className='-mr-2 -my-2 md:hidden'>
           <Popover.Button className='rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100'>
             <span className='sr-only'>Open menu</span>
@@ -68,7 +64,6 @@ const Navbar: NextPage = () => {
           </Popover.Group>
         </div>
       </div>
-      {/* Mobile Part */}
       <MobilePart />
     </Popover>
   )
