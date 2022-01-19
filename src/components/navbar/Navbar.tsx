@@ -1,20 +1,21 @@
-import type { NextPage } from 'next'
 import { solutions } from '@lib/navbar.options'
 
 // UI Components
 import { Popover } from '@headlessui/react'
-import { MobilePart, NavMenuItem, TransitionFunc } from './index'
+import { TransitionFunc } from './index'
+import { MobileNavLink, NavLink } from './NavbarLinks'
 import { Logo } from '@components/index'
 
 // Icons
 import { HiMenuAlt4 } from 'react-icons/hi'
 import { BiChevronDown } from 'react-icons/bi'
+import { AiOutlineClose } from 'react-icons/ai'
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar: NextPage = () => {
+const Navbar = () => {
   return (
     <Popover className='relative bg-midnight'>
       <div className='flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10'>
@@ -52,7 +53,7 @@ const Navbar: NextPage = () => {
                       <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                         <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                           {solutions.map((item) => (
-                            <NavMenuItem item={item} key={''} />
+                            <NavLink item={item} key={''} />
                           ))}
                         </div>
                       </div>
@@ -64,7 +65,34 @@ const Navbar: NextPage = () => {
           </Popover.Group>
         </div>
       </div>
-      <MobilePart />
+      {/* Mobile part */}
+      <TransitionFunc>
+        <Popover.Panel
+          focus
+          className='absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'
+        >
+          <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50'>
+            <div className='pt-5 pb-6 px-5'>
+              <div className='flex items-center justify-between'>
+                <Logo />
+                <div className='-mr-2'>
+                  <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100'>
+                    <span className='sr-only'>Close menu</span>
+                    <AiOutlineClose className='h-6 w-6' aria-hidden='true' />
+                  </Popover.Button>
+                </div>
+              </div>
+              <div className='mt-6'>
+                <nav className='grid gap-6'>
+                  {solutions.map((item: any) => (
+                    <MobileNavLink solutions={item} key={item.name} />
+                  ))}
+                </nav>
+              </div>
+            </div>
+          </div>
+        </Popover.Panel>
+      </TransitionFunc>
     </Popover>
   )
 }
