@@ -108,6 +108,8 @@ export const getStaticProps = async () => {
     props: {
       coinList,
     },
+
+    revalidate: 1,
   }
 }
 
