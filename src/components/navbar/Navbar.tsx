@@ -11,7 +11,7 @@ import { HiMenuAlt4 } from 'react-icons/hi'
 import { BiChevronDown } from 'react-icons/bi'
 import { AiOutlineClose } from 'react-icons/ai'
 
-function classNames(...classes: string[]) {
+const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ')
 }
 

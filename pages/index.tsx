@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
+import { getCoinList, tradingPlatforms } from '@lib/index'
 import Image from 'next/image'
 import { Layout } from '@components/index'
 import HomePageStats from '@components/HomePageStats'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ coinList }: any) => {
   return (
     <Layout>
       <main className='bg-midnight'>
@@ -71,9 +72,43 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-      <HomePageStats />
+      <HomePageStats data={coinList} />
+      <div className='bg-gradient-to-t from-cyan-800 to-midnight_light'>
+        <div className='max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8'>
+          <h2 className='text-3xl font-extrabold text-white'>
+            Recomended platforms to trade with
+          </h2>
+          <div className='flow-root mt-8 lg:mt-10'>
+            <div className='-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4'>
+              {tradingPlatforms.map((platform: any) => (
+                <div
+                  key={platform.name}
+                  className='mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4'
+                >
+                  <Image
+                    className='h-12'
+                    height={platform.height}
+                    width={platform.width}
+                    src={platform.logo}
+                    alt={platform.name}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
+}
+
+export const getStaticProps = async () => {
+  const coinList = await getCoinList()
+  return {
+    props: {
+      coinList,
+    },
+  }
 }
 
 export default Home
