@@ -1,8 +1,14 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
+// import { AuthProvider } from '@lib/AuthContext'
+import { Fragment } from 'react'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />
+  return (
+    <Fragment>
+      <Component {...pageProps} />
+    </Fragment>
+  )
 }
 
 export default MyApp
