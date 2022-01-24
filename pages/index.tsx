@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
 import { getCoinList, tradingPlatforms, options } from '@lib/index'
+import axios from 'axios'
+import useSWR from 'swr'
 import Image from 'next/image'
 import { Layout } from '@components/index'
 import HomePageStats from '@components/HomePageStats'

@@ -1,5 +1,7 @@
 import * as axios from 'axios'
 
+const api_key = process.env.RAPID_API
+
 export const options = {
   method: 'GET',
   url: 'https://coinranking1.p.rapidapi.com/coins',
@@ -14,7 +16,7 @@ export const options = {
   },
   headers: {
     'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-    'x-rapidapi-key': process.env.RAPID_API,
+    'x-rapidapi-key': api_key,
   },
 }
 export const optionsLong = {
@@ -31,7 +33,7 @@ export const optionsLong = {
   },
   headers: {
     'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-    'x-rapidapi-key': process.env.RAPID_API,
+    'x-rapidapi-key': 'abbd20e0f7msh2d8b8f892e76a44p1a77dbjsn8f1aecbb5051',
   },
 }
 
@@ -45,8 +47,7 @@ export const getCoinList = async (options: any) => {
   }
 }
 
-const formatter = new Intl.NumberFormat('en-EN', {
-  maximumSignificantDigits: 3,
+const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
 })
@@ -75,3 +76,11 @@ export const tradingPlatforms = [
     width: 50,
   },
 ]
+
+export const roundBillion = (num: number) => {
+  if (num > 1000000000) {
+    return (num / 1000000000).toFixed(1) + 'B'
+  } else if (num > 1000000) {
+    return (num / 1000000).toFixed(1) + 'M'
+  }
+}

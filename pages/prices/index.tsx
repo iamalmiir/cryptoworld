@@ -1,8 +1,32 @@
+import axios from 'axios'
 import Layout from '@components/Layout'
+import useSWR from 'swr'
 import Image from 'next/image'
-import { getCoinList, formatPrice, optionsLong } from '@lib/index'
+import { useState, useEffect } from 'react'
+import { getCoinList, formatPrice, optionsLong, roundBillion } from '@lib/index'
 
-const PricesPage = ({ coinList }: any) => {
+const PricesPage = () => {
+  const fetcher = (url: any) => axios(url).then((res) => res.data.data.coins)
+  const [coinList, setCoinList] = useState([])
+  const [pulse, setPulse] = useState(false)
+  const { data, error } = useSWR(optionsLong, fetcher, {
+    refreshInterval: 5000,
+  })
+
+  useEffect(() => {
+    if (data) {
+      setCoinList(data)
+      setPulse(true)
+      setTimeout(() => {
+        setPulse(false)
+      }, 2000)
+    }
+  }, [data])
+
+  const s = true
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+
   return (
     <Layout>
       <div className='flex flex-col'>
@@ -70,15 +94,21 @@ const PricesPage = ({ coinList }: any) => {
                         </div>
                       </td>
                       <td className='px-6 py-4 whitespace-nowrap'>
-                        <div className='text-sm text-gray-900'>
-                          {coin.price}
+                        <div
+                          className={
+                            pulse
+                              ? 'animate-pulse text-sm text-green-500'
+                              : 'text-sm text-gray-900'
+                          }
+                        >
+                          {formatPrice(coin.price)}
                         </div>
                       </td>
                       <td className='px-6 py-4 whitespace-nowrap'>
-                        {coin['24hVolume']}
+                        {roundBillion(coin['24hVolume'])}
                       </td>
                       <td className='px-6 py-4 whitespace-nowrap'>
-                        {coin.marketCap}
+                        {roundBillion(coin.marketCap)}
                       </td>
                       <td className='px-6 py-4 whitespace-nowrap'>
                         {coin.change}%
@@ -95,15 +125,15 @@ const PricesPage = ({ coinList }: any) => {
   )
 }
 
-export const getStaticProps = async () => {
-  const coinList = await getCoinList(optionsLong)
-  return {
-    props: {
-      coinList,
-    },
+// export const getStaticProps = async () => {
+//   const coinList = await getCoinList(options)
+//   return {
+//     props: {
+//       coinList,
+//     },
 
-    revalidate: 1,
-  }
-}
+//     revalidate: 1,
+//   }
+// }
 
 export default PricesPage
