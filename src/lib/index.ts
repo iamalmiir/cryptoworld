@@ -1,7 +1,5 @@
 import * as axios from 'axios'
 
-const api_key = process.env.RAPID_API
-
 export const options = {
   method: 'GET',
   url: 'https://coinranking1.p.rapidapi.com/coins',
@@ -16,25 +14,27 @@ export const options = {
   },
   headers: {
     'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-    'x-rapidapi-key': api_key,
+    'x-rapidapi-key': process.env.RAPID_API,
   },
 }
-export const optionsLong = {
-  method: 'GET',
-  url: 'https://coinranking1.p.rapidapi.com/coins',
-  params: {
-    referenceCurrencyUuid: 'yhjMzLPhuIDl',
-    timePeriod: '24h',
-    tiers: '1',
-    orderBy: 'marketCap',
-    orderDirection: 'desc',
-    limit: '50',
-    offset: '0',
-  },
-  headers: {
-    'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-    'x-rapidapi-key': 'abbd20e0f7msh2d8b8f892e76a44p1a77dbjsn8f1aecbb5051',
-  },
+export const optionsLong = (key: string) => {
+  return {
+    method: 'GET',
+    url: 'https://coinranking1.p.rapidapi.com/coins',
+    params: {
+      referenceCurrencyUuid: 'yhjMzLPhuIDl',
+      timePeriod: '24h',
+      tiers: '1',
+      orderBy: 'marketCap',
+      orderDirection: 'desc',
+      limit: '30',
+      offset: '0',
+    },
+    headers: {
+      'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
+      'x-rapidapi-key': key,
+    },
+  }
 }
 
 export const getCoinList = async (options: any) => {

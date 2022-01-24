@@ -5,11 +5,11 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { getCoinList, formatPrice, optionsLong, roundBillion } from '@lib/index'
 
-const PricesPage = () => {
+const PricesPage = ({ key_api }: any) => {
   const fetcher = (url: any) => axios(url).then((res) => res.data.data.coins)
   const [coinList, setCoinList] = useState([])
   const [pulse, setPulse] = useState(false)
-  const { data, error } = useSWR(optionsLong, fetcher, {
+  const { data, error } = useSWR(optionsLong(key_api), fetcher, {
     refreshInterval: 5000,
   })
 
@@ -125,15 +125,15 @@ const PricesPage = () => {
   )
 }
 
-// export const getStaticProps = async () => {
-//   const coinList = await getCoinList(options)
-//   return {
-//     props: {
-//       coinList,
-//     },
+export const getStaticProps = async () => {
+  const key = process.env.RAPID_API
+  return {
+    props: {
+      key_api: key,
+    },
 
-//     revalidate: 1,
-//   }
-// }
+    revalidate: 1,
+  }
+}
 
 export default PricesPage
