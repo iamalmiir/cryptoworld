@@ -1,10 +1,21 @@
 import type { NextPage } from 'next'
-import { getCoinList, tradingPlatforms } from '@lib/index'
+import axios from 'axios'
+import useSWR from 'swr'
+import { getCoinList, tradingPlatforms, options } from '@lib/index'
 import Image from 'next/image'
 import { Layout } from '@components/index'
 import HomePageStats from '@components/HomePageStats'
 
 const Home: NextPage = ({ coinList }: any) => {
+  // const fetcher = (url: any) => axios(url).then((res) => res.data)
+
+  // const { data, error } = useSWR(options, fetcher, {
+  //   refreshInterval: 1000,
+  // })
+
+  // if (error) return <div>failed to load</div>
+  // if (!data) return <div>loading...</div>
+
   return (
     <Layout>
       <main className='bg-midnight'>

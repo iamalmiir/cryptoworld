@@ -1,6 +1,6 @@
 import * as axios from 'axios'
 
-const options = {
+export const options = {
   method: 'GET',
   url: 'https://coinranking1.p.rapidapi.com/coins',
   params: {
