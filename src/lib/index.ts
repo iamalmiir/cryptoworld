@@ -17,8 +17,25 @@ export const options = {
     'x-rapidapi-key': process.env.RAPID_API,
   },
 }
+export const optionsLong = {
+  method: 'GET',
+  url: 'https://coinranking1.p.rapidapi.com/coins',
+  params: {
+    referenceCurrencyUuid: 'yhjMzLPhuIDl',
+    timePeriod: '24h',
+    tiers: '1',
+    orderBy: 'marketCap',
+    orderDirection: 'desc',
+    limit: '50',
+    offset: '0',
+  },
+  headers: {
+    'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
+    'x-rapidapi-key': process.env.RAPID_API,
+  },
+}
 
-export const getCoinList = async () => {
+export const getCoinList = async (options: any) => {
   try {
     // @ts-ignore
     const response = await axios(options)

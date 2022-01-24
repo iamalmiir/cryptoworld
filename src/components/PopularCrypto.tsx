@@ -18,9 +18,7 @@ interface Props {
 
 const PopularCrypto = ({ crypto }: any) => {
   const price = formatPrice(crypto.price)
-  const current = crypto['sparkline'][26]
-  const open = crypto['sparkline'][0]
-  const priceChange = formatPrice(current - open)
+
   return (
     <div key={crypto.name} className='px-4 py-5 sm:p-6'>
       <dt className='text-base text-left font-bold text-gray-200'>

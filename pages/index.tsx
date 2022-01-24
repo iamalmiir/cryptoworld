@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { getCoinList, tradingPlatforms } from '@lib/index'
+import { getCoinList, tradingPlatforms, options } from '@lib/index'
 import Image from 'next/image'
 import { Layout } from '@components/index'
 import HomePageStats from '@components/HomePageStats'
@@ -103,7 +103,7 @@ const Home: NextPage = ({ coinList }: any) => {
 }
 
 export const getStaticProps = async () => {
-  const coinList = await getCoinList()
+  const coinList = await getCoinList(options)
   return {
     props: {
       coinList,
