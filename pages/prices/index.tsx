@@ -31,9 +31,9 @@ const PricesPage = ({ key_api }: any) => {
       <div className='flex flex-col'>
         <div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
           <div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
-            <div className='shadow overflow-hidden border-b border-gray-200 sm:rounded-lg'>
+            <div className='shadow overflow-hidden '>
               <table className='min-w-full divide-y divide-gray-200'>
-                <thead className='bg-gray-50'>
+                <thead className='bg-gradient-to-r from-midnight_light to-midnight'>
                   <tr>
                     <th
                       scope='col'
@@ -67,7 +67,7 @@ const PricesPage = ({ key_api }: any) => {
                     </th>
                   </tr>
                 </thead>
-                <tbody className='bg-white divide-y divide-gray-200'>
+                <tbody className='bg-gradient-to-r from-midnight_light to-midnight divide-y divide-gray-200'>
                   {!data && <Loading />}
                   {coinList.map((coin: any) => (
                     <tr key={coin.symbol}>
@@ -84,10 +84,10 @@ const PricesPage = ({ key_api }: any) => {
                             </div>
                           </div>
                           <div className='ml-4'>
-                            <div className='text-sm font-medium text-gray-900'>
+                            <div className='text-sm font-medium text-white'>
                               {coin.name}
                             </div>
-                            <div className='text-sm text-gray-500'>
+                            <div className='text-sm text-gray-400'>
                               {coin.symbol}
                             </div>
                           </div>
@@ -98,19 +98,25 @@ const PricesPage = ({ key_api }: any) => {
                           className={
                             pulse
                               ? 'animate-pulse text-sm text-green-500'
-                              : 'text-sm text-gray-900'
+                              : 'text-sm text-white'
                           }
                         >
                           {formatPrice(coin.price)}
                         </div>
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className='px-6 py-4 text-gray-200 whitespace-nowrap'>
                         {roundBillion(coin['24hVolume'])}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className='px-6 py-4 text-gray-200 whitespace-nowrap'>
                         {roundBillion(coin.marketCap)}
                       </td>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td
+                        className={
+                          coin.change < 0
+                            ? 'px-6 py-4 text-red-500 whitespace-nowrap'
+                            : 'px-6 py-4 text-green-500 whitespace-nowrap'
+                        }
+                      >
                         {coin.change}%
                       </td>
                     </tr>
