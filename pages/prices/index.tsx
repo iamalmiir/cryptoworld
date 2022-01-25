@@ -3,7 +3,8 @@ import Layout from '@components/Layout'
 import useSWR from 'swr'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { getCoinList, formatPrice, optionsLong, roundBillion } from '@lib/index'
+import Loading from '@components/Loading'
+import { formatPrice, optionsLong, roundBillion } from '@lib/index'
 
 const PricesPage = ({ key_api }: any) => {
   const fetcher = (url: any) => axios(url).then((res) => res.data.data.coins)
@@ -23,9 +24,7 @@ const PricesPage = ({ key_api }: any) => {
     }
   }, [data])
 
-  const s = true
   if (error) return <div>failed to load</div>
-  if (!data) return <div>loading...</div>
 
   return (
     <Layout>
@@ -40,7 +39,7 @@ const PricesPage = ({ key_api }: any) => {
                       scope='col'
                       className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
                     >
-                      Name & Symbol
+                      {'Name & Symbol'}
                     </th>
                     <th
                       scope='col'
@@ -69,6 +68,7 @@ const PricesPage = ({ key_api }: any) => {
                   </tr>
                 </thead>
                 <tbody className='bg-white divide-y divide-gray-200'>
+                  {!data && <Loading />}
                   {coinList.map((coin: any) => (
                     <tr key={coin.symbol}>
                       <td className='px-6 py-4 whitespace-nowrap'>
