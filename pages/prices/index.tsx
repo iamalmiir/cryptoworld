@@ -71,7 +71,7 @@ const PricesPage = ({ key_api }: any) => {
                   {!data && <Loading />}
                   {coinList.map((coin: any) => (
                     <tr key={coin.symbol}>
-                      <td className='px-6 py-4 whitespace-nowrap'>
+                      <td className='px-2 py-4 whitespace-nowrap'>
                         <div className='flex items-center'>
                           <div className='flex-shrink-0 h-10 w-10'>
                             <div className='h-10 w-10 rounded-full'>
