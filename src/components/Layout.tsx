@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Fragment, ReactNode } from 'react'
 
 // Components
-import { Nav } from '@components/index'
+import { Nav, Footer } from '@components/index'
 
 interface Props {
   title?: string
@@ -22,6 +22,7 @@ const Layout = ({ title, keywords, description, children }: Props) => {
       </Head>
       <Nav />
       <main>{children}</main>
+      <Footer />
     </Fragment>
   )
 }
