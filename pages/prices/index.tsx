@@ -26,6 +26,14 @@ const PricesPage = ({ key_api }: any) => {
 
   if (error) return <div>failed to load</div>
 
+  if (!data) {
+    return (
+      <Layout>
+        <Loading />
+      </Layout>
+    )
+  }
+
   return (
     <Layout>
       <div className='flex flex-col'>
@@ -68,7 +76,6 @@ const PricesPage = ({ key_api }: any) => {
                   </tr>
                 </thead>
                 <tbody className='bg-gradient-to-r from-midnight_light to-midnight divide-y divide-gray-200'>
-                  {!data && <Loading />}
                   {coinList.map((coin: any) => (
                     <tr key={coin.symbol}>
                       <td className='px-2 py-4 whitespace-nowrap'>
